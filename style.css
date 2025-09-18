@@ -11,13 +11,14 @@ html, body {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: #000;
+  background: #0a0a0a;
   color: #ffffff;
-  line-height: 1.6;
+  line-height: 1.5;
   position: relative;
+  font-weight: 500;
 }
 
-/* Galaxy Background */
+/* Modern gradient background */
 body::before {
   content: '';
   position: fixed;
@@ -26,15 +27,14 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%),
-    radial-gradient(ellipse at top, #2D1B69 0%, transparent 50%),
-    radial-gradient(ellipse at left, #0F3460 0%, transparent 50%),
-    radial-gradient(ellipse at right, #533483 0%, transparent 50%),
-    radial-gradient(ellipse at center, #1a0d2e 0%, transparent 70%);
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%),
+    radial-gradient(circle at 20% 80%, #120078 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #ff006e 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, #8338ec 0%, transparent 50%);
   z-index: -3;
 }
 
-/* Animated Stars */
+/* Subtle animated particles */
 .stars, .stars2, .stars3 {
   position: fixed;
   top: 0;
@@ -46,71 +46,60 @@ body::before {
 
 .stars {
   background: 
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
-    radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent);
   background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: zoom 20s alternate infinite;
+  background-size: 150px 150px;
+  animation: float 8s ease-in-out infinite;
 }
 
 .stars2 {
   background: 
-    radial-gradient(1px 1px at 40px 60px, #fff, transparent),
-    radial-gradient(1px 1px at 80px 120px, #fff, transparent),
-    radial-gradient(2px 2px at 140px 80px, #fff, transparent);
+    radial-gradient(1px 1px at 60px 90px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 120px 150px, rgba(255,255,255,0.3), transparent);
   background-repeat: repeat;
-  background-size: 300px 300px;
-  animation: zoom 10s alternate infinite;
+  background-size: 200px 200px;
+  animation: float 12s ease-in-out infinite reverse;
 }
 
 .stars3 {
   background: 
-    radial-gradient(1px 1px at 60px 90px, #fff, transparent),
-    radial-gradient(2px 2px at 120px 150px, #fff, transparent);
+    radial-gradient(1px 1px at 80px 120px, rgba(255,255,255,0.1), transparent);
   background-repeat: repeat;
-  background-size: 400px 400px;
-  animation: zoom 15s alternate infinite;
+  background-size: 250px 250px;
+  animation: float 15s ease-in-out infinite;
 }
 
-@keyframes zoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
 }
 
-/* Navigation */
+/* Modern Navigation */
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
   z-index: 1000;
-  padding: 1rem 0;
+  padding: 0.8rem 2rem;
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .nav-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #0066ff, #6366f1);
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -119,43 +108,50 @@ body::before {
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #0066ff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #667eea;
 }
 
 /* Container */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Glass Effect */
+/* Modern Glass Effect */
 .glass-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .glass-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
 }
 
-/* Hero Section */
+/* Compact Hero Section */
 .hero {
   height: 100vh;
   display: flex;
@@ -166,126 +162,140 @@ body::before {
 }
 
 .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #0066ff, #6366f1, #8b5cf6);
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #0066ff, #6366f1);
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.2rem 3rem;
   border: none;
   border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
 }
 
-/* Sections */
+/* Compact Sections */
 section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
   z-index: 1;
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 900;
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #0066ff, #6366f1);
+  background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
 }
 
-/* About Section */
+/* Compact About Section */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
 .about-grid .glass-box h3,
 .about-grid .glass-box h4 {
-  color: #0066ff;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 .about-grid .glass-box p {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 .skills-list,
 .services-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
   list-style: none;
+  margin-top: 1rem;
 }
 
 .skills-list li,
 .services-list li {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1.2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
   transition: all 0.3s ease;
 }
 
 .skills-list li:hover,
 .services-list li:hover {
-  background: rgba(0, 102, 255, 0.1);
-  border-color: #0066ff;
+  background: rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+  transform: translateY(-2px);
 }
 
 .stats {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .stat-item {
   text-align: center;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .stat-number {
   display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0066ff;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #667eea;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Portfolio Section */
+/* Compact Portfolio Section */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -298,8 +308,8 @@ section {
 
 .video-placeholder {
   aspect-ratio: 16/9;
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(99, 102, 241, 0.2));
-  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,18 +317,21 @@ section {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .video-placeholder:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.5);
 }
 
 .play-icon {
-  font-size: 3rem;
-  color: #0066ff;
+  font-size: 4rem;
+  color: #667eea;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
+  text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
 }
 
 .video-placeholder:hover .play-icon {
@@ -326,88 +339,116 @@ section {
 }
 
 .video-placeholder h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
   color: #ffffff;
 }
 
 .video-placeholder p {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-/* Contact Section */
+/* Compact Contact Section */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.contact-form-box {
-  grid-column: span 3;
-}
-
 .contact-grid .glass-box h4 {
-  color: #0066ff;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .contact-grid .glass-box p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .social-links p {
-  margin-bottom: 0.5rem;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 1rem;
-  color: #ffffff;
-  font-family: inherit;
-  transition: all 0.3s ease;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #0066ff;
-  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.1);
-}
-
-.submit-btn {
-  background: linear-gradient(135deg, #0066ff, #6366f1);
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 10px;
+  margin-bottom: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-list,
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .nav-container {
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -420,45 +461,16 @@ section {
     font-size: 2rem;
   }
   
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-form-box {
-    grid-column: span 1;
-  }
-  
-  .nav-menu {
-    gap: 1rem;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-menu {
-    display: none;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
   .glass-box {
     padding: 1.5rem;
+  }
+  
+  .about-grid .glass-box h3,
+  .about-grid .glass-box h4 {
+    font-size: 1.5rem;
+  }
+  
+  .about-grid .glass-box p {
+    font-size: 1rem;
   }
 }
