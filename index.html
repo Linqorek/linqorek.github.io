@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Editor Portfolio - Professional Video Editing Services</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">VE</div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Professional Video Editor</h1>
+          <p class="hero-subtitle">Bringing your vision to life through cinematic storytelling</p>
+          <button class="cta-button" onclick="scrollToSection('portfolio')">View My Work</button>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-grid">
+            <div class="glass-box">
+              <h3>5+ Years Experience</h3>
+              <p>Professional video editor with extensive experience in commercial content, music videos, and corporate presentations.</p>
+            </div>
+            <div class="glass-box">
+              <h4>Skills</h4>
+              <ul class="skills-list">
+                <li>Adobe Premiere Pro</li>
+                <li>After Effects</li>
+                <li>DaVinci Resolve</li>
+                <li>Color Grading</li>
+                <li>Motion Graphics</li>
+                <li>Audio Mixing</li>
+              </ul>
+            </div>
+            <div class="glass-box">
+              <h4>Services</h4>
+              <ul class="services-list">
+                <li>Commercial Videos</li>
+                <li>Music Videos</li>
+                <li>Corporate Content</li>
+                <li>Documentary Editing</li>
+                <li>Social Media Content</li>
+                <li>Color Correction</li>
+              </ul>
+            </div>
+            <div class="glass-box">
+              <h4>Stats</h4>
+              <div class="stats">
+                <div class="stat-item">
+                  <span class="stat-number">100+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">Years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="section-title">My Work</h2>
+          <div class="portfolio-grid">
+            <div class="portfolio-item glass-box">
+              <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <h3>Commercial Project</h3>
+                <p>Brand advertisement with dynamic transitions</p>
+              </div>
+            </div>
+            <div class="portfolio-item glass-box">
+              <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <h3>Music Video</h3>
+                <p>Creative storytelling with synchronized editing</p>
+              </div>
+            </div>
+            <div class="portfolio-item glass-box">
+              <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <h3>Corporate Video</h3>
+                <p>Professional presentation with motion graphics</p>
+              </div>
+            </div>
+            <div class="portfolio-item glass-box">
+              <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <h3>Documentary</h3>
+                <p>Long-form content with narrative structure</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="contact-grid">
+            <div class="glass-box">
+              <h4>Email</h4>
+              <p>contact@videoeditor.com</p>
+            </div>
+            <div class="glass-box">
+              <h4>Phone</h4>
+              <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="glass-box">
+              <h4>Location</h4>
+              <p>Available Worldwide</p>
+            </div>
+            <div class="glass-box">
+              <h4>Response Time</h4>
+              <p>Within 24 hours</p>
+            </div>
+            <div class="glass-box contact-form-box">
+              <h4>Send Message</h4>
+              <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Project Details" rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+              </form>
+            </div>
+            <div class="glass-box">
+              <h4>Social Media</h4>
+              <div class="social-links">
+                <p>Instagram: @videoeditor</p>
+                <p>LinkedIn: /in/videoeditor</p>
+                <p>YouTube: VideoEditor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
